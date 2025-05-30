@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme colors */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --primary: #3B82F6;
+  --primary-hover: #2563eb;
+  --secondary: #14B8A6;
+  --accent: #F97316;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3B82F6;
+  --dropzone-bg: #f3f4f6;
+  --dropzone-border: #d1d5db;
+  --dropzone-active: #dbeafe;
+  --dropzone-active-border: #3B82F6;
+  --dropzone-reject: #fee2e2;
+  --dropzone-reject-border: #EF4444;
+}
+
+[data-theme='dark'] {
+  /* Dark theme colors */
+  --background: #111827;
+  --foreground: #f9fafb;
+  --primary: #60A5FA;
+  --primary-hover: #3B82F6;
+  --secondary: #2DD4BF;
+  --accent: #FB923C;
+  --success: #34D399;
+  --warning: #FBBF24;
+  --error: #F87171;
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
+  --border: #374151;
+  --input: #374151;
+  --ring: #60A5FA;
+  --dropzone-bg: #1f2937;
+  --dropzone-border: #374151;
+  --dropzone-active: #1e3a8a;
+  --dropzone-active-border: #60A5FA;
+  --dropzone-reject: #7f1d1d;
+  --dropzone-reject-border: #F87171;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 transition-all duration-200;
+    background-color: var(--background);
+    color: var(--foreground);
+    border-color: var(--input);
+  }
+  
+  .form-input:focus {
+    border-color: var(--ring);
+    --tw-ring-color: var(--ring);
+  }
+  
+  .label {
+    @apply block text-sm font-medium mb-1;
+    color: var(--foreground);
+  }
+}
+
+/* Accessibility toolbar styling */
+.acc_toolbar {
+  z-index: 100;
+}
